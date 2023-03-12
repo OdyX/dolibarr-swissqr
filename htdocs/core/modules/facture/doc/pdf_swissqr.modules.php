@@ -347,7 +347,11 @@ class pdf_swissqr extends ModelePDFFactures
                     $heightforinfotot = 220;
                 }
                 $heightforfreetext = (isset($conf->global->MAIN_PDF_FREETEXT_HEIGHT) ? $conf->global->MAIN_PDF_FREETEXT_HEIGHT : 5); // Height reserved to output the free text on last page
-                $heightforfooter = $this->marge_basse + 8; // Height reserved to output the footer (value include bottom margin)
+                // This is the default margin
+                // $heightforfooter = $this->marge_basse + 8; // Height reserved to output the footer (value include bottom margin)
+                // With QR Invoice, use the standard SWIFT margin, including the 'separate' ('Separate before paying in') header
+                $heightforfooter = 110;
+
                 if (!empty($conf->global->MAIN_GENERATE_DOCUMENTS_SHOW_FOOT_DETAILS)) {
                     $heightforfooter += 6;
                 }
