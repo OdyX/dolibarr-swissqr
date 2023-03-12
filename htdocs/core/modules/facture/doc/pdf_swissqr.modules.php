@@ -856,9 +856,6 @@ class pdf_swissqr extends ModelePDFFactures
 
                 // Pagefoot
                 $this->_pagefoot($pdf, $object, $outputlangs);
-                if (method_exists($pdf, 'AliasNbPages')) {
-                    $pdf->AliasNbPages();
-                }
 
                 // Add page for the Swiss QR-invoice
                 if (isset($object->iban))
