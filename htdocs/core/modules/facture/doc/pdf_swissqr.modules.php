@@ -864,6 +864,7 @@ class pdf_swissqr extends ModelePDFFactures
                 {
                     $pdf->AddPage();
                     $this->_pagehead($pdf, $object, 0, $outputlangs);
+                    $pdf->SetTextColor(0, 0, 0);
                     $this->qrinvoice($pdf, $object, $outputlangs, $conf);
                 }
 
