@@ -171,7 +171,7 @@ class pdf_swissqr extends ModelePDFFactures
         $this->option_multilang = 1; // Available in several languages
         $this->option_escompte = 1; // Displays if there has been a discount
         $this->option_credit_note = 1; // Support credit notes
-        $this->option_freetext = 1; // Support add of a personalised text
+        $this->option_freetext = 0; // TODO: add proper support for a personalised text
         $this->option_draft_watermark = 1; // Support add of a watermark on drafts
         $this->watermark = '';
 
@@ -346,7 +346,8 @@ class pdf_swissqr extends ModelePDFFactures
                 if ($heightforinfotot > 220) {
                     $heightforinfotot = 220;
                 }
-                $heightforfreetext = (isset($conf->global->MAIN_PDF_FREETEXT_HEIGHT) ? $conf->global->MAIN_PDF_FREETEXT_HEIGHT : 5); // Height reserved to output the free text on last page
+                $heightforfreetext = 0; // TODO: add support for proper freetext
+
                 // This is the default margin
                 // $heightforfooter = $this->marge_basse + 8; // Height reserved to output the footer (value include bottom margin)
                 // With QR Invoice, use the standard SWIFT margin, including the 'separate' ('Separate before paying in') header
