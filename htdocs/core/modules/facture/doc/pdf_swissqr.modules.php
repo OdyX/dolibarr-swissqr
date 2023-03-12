@@ -342,7 +342,7 @@ class pdf_swissqr extends ModelePDFFactures
                 $default_font_size = pdf_getPDFFontSize($outputlangs); // Must be after pdf_getInstance
                 $pdf->SetAutoPageBreak(1, 0);
 
-                $heightforinfotot = 50 + (4 * $nbpayments); // Height reserved to output the info and total part and payment part
+                $heightforinfotot = 35 + (4 * $nbpayments); // Height reserved to output the info and total part and payment part
                 if ($heightforinfotot > 220) {
                     $heightforinfotot = 220;
                 }
